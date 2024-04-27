@@ -15,7 +15,7 @@ function secondsToMinutesSeconds(seconds){
 }
 async function getsongs(folder){
     currFolder = folder;
-    let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
+    let a = await fetch(`https://github.com/Eaman006/MusicoPlayer/tree/gh-pages/${folder}/`)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML=response;
@@ -62,7 +62,7 @@ const PlayMusic = (track, pause=false)=>{
     document.querySelector(".songtime").innerHTML="0:00/0:00"
 }
 async function displayAlbum(){
-    let a = await fetch(`http://127.0.0.1:3000/Songs/`)
+    let a = await fetch(`https://github.com/Eaman006/MusicoPlayer/tree/gh-pages/Songs`)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML=response;
@@ -75,7 +75,7 @@ async function displayAlbum(){
         
         if(e.href.includes("/Songs")){
             let folder=e.href.split("/").slice(-2)[0]
-            let a = await fetch(`http://127.0.0.1:3000/Songs/${folder}/info.json`)
+            let a = await fetch(`https://github.com/Eaman006/MusicoPlayer/tree/gh-pages/Songs${folder}/info.json`)
             let response = await a.json();
             cardContainer.innerHTML=cardContainer.innerHTML+`<div data-folder="${folder}" class="card">
             <div class="play">
