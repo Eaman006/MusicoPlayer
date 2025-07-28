@@ -1,0 +1,13 @@
+{
+  "name": "musico-player",
+  "version": "1.0.0",
+  "description": "A web-based music player",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 3000"
+  },
+  "keywords": ["music", "player", "web", "html5"],
+  "author": "Your Name",
+  "license": "MIT"
+} 
