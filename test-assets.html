@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+</head>
+<body>
+    <h1>Asset Test Page</h1>
+    <p>This page tests if all assets are loading correctly.</p>
+    
+    <h2>CSS Files:</h2>
+    <ul>
+        <li>style.css: <span id="style-status">Loading...</span></li>
+        <li>utility.css: <span id="utility-status">Loading...</span></li>
+    </ul>
+    
+    <h2>SVG Files:</h2>
+    <div>
+        <img src="close.svg" alt="close" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="hamburger.svg" alt="hamburger" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="home.svg" alt="home" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="library.svg" alt="library" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="music.svg" alt="music" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="mute.svg" alt="mute" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="next.svg" alt="next" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="pause.svg" alt="pause" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="play.svg" alt="play" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="previous.svg" alt="previous" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="search.svg" alt="search" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+        <img src="volume.svg" alt="volume" width="30" onload="this.style.border='2px solid green'" onerror="this.style.border='2px solid red'">
+    </div>
+    
+    <script>
+        // Test CSS loading
+        function testCSS(filename, elementId) {
+            const link = document.querySelector(`link[href="${filename}"]`);
+            if (link && link.sheet) {
+                document.getElementById(elementId).textContent = "✅ Loaded";
+                document.getElementById(elementId).style.color = "green";
+            } else {
+                document.getElementById(elementId).textContent = "❌ Failed";
+                document.getElementById(elementId).style.color = "red";
+            }
+        }
+        
+        window.onload = function() {
+            testCSS('style.css', 'style-status');
+            testCSS('utility.css', 'utility-status');
+        };
+    </script>
+</body>
+</html> 
